@@ -1,0 +1,4 @@
+lastdraft_post: ~
+    # post:
+        # controller: Acme\Bundle\PostBundle\Controller\PostController
+        # entity: Acme\Bundle\PostBundle\Entity\Post

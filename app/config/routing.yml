@@ -1,0 +1,3 @@
+LastdraftPostBundle:
+    resource: "@LastdraftPostBundle/Resources/config/routing.xml"
+    prefix:   /

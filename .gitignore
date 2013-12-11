@@ -1,0 +1,118 @@
+# ----------------------------------------------
+# Symfony / Composer
+# ----------------------------------------------
+/web/bundles/
+/app/bootstrap.php.cache
+/app/cache/
+/app/config/parameters.yml
+/app/logs/
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+/build/
+/vendor/
+/bin/
+/composer.phar
+behat.yml
+
+
+# ----------------------------------------------
+# CSS / JavaScript files compiled via assetic:dump
+# ----------------------------------------------
+/web/css/*.css
+/web/js/*.js
+
+
+# ----------------------------------------------
+# Sitemap
+# ----------------------------------------------
+/web/sitemap.xml
+/web/sitemap.xml.gz
+
+
+# ----------------------------------------------
+# IDE Helper Files
+# ----------------------------------------------
+atlassian-ide-plugin.xml
+_ide_helper.php
+*.iml
+*.ipr
+*.iws
+.idea/
+*.launch
+nbproject/
+nbactions.xml
+nb-configuration.xml
+*.sublime-project
+*.pydevproject
+.project
+.metadata
+
+
+# ----------------------------------------------
+# Common Directories And Files
+# ----------------------------------------------
+public/assets/*
+runtime/*
+bin/**
+tmp/**
+tmp/**/*
+*.log
+*.tmp
+*.bak
+*.swp
+*~.nib
+*.php~
+local.properties
+.classpath
+.settings/
+.loadpath
+
+
+# ----------------------------------------------
+# External Tool Builders
+# ----------------------------------------------
+.externalToolBuilders/
+
+
+# ----------------------------------------------
+# CDT/PDT-specific
+# ----------------------------------------------
+.cproject
+.buildpath
+
+
+# ----------------------------------------------
+# Emacs
+# ----------------------------------------------
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+
+# ----------------------------------------------
+# Vi/Vim
+# ----------------------------------------------
+.*.sw[a-z]
+*.un~
+Session.vim
+
+
+# ----------------------------------------------
+# Mac OS
+# ----------------------------------------------
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+
+# ----------------------------------------------
+# Thumbnails / Windows
+# ----------------------------------------------
+._*
+Thumbs.db
+Desktop.ini

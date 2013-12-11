@@ -2,10 +2,11 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: lastdraft.yml }
+    - { resource: "@LastdraftPostBundle/Resources/config/services.xml" }
 
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
+    translator:      { fallback: "%locale%" }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -60,6 +61,9 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+        resolve_target_entities:
+            Lastdraft\Bundle\PostBundle\Entity\AuthorInterface: %lastdraft_post.author.entity.class%
+            Lastdraft\Bundle\PostBundle\Entity\PostInterface: %lastdraft_post.post.entity.class%
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -68,3 +72,9 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# FOS User Bundle
+fos_user:
+    db_driver:     orm
+    firewall_name: main
+    user_class:    Lastdraft\Bundle\UserBundle\Entity\User

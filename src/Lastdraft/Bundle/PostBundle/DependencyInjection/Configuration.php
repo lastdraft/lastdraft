@@ -41,6 +41,18 @@ class Configuration implements ConfigurationInterface
     {
         $rootNode
             ->children()
+                ->arrayNode('author')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('entity')
+                            ->cannotBeEmpty()
+                            ->example('Lastdraft\\Bundle\\PostBundle\\Entity\\Author')
+                            ->info('Post Entity Class')
+                            ->defaultValue('Lastdraft\\Bundle\\PostBundle\\Entity\\Author')
+                        ->end()
+                    ->end()
+                ->end()
+
                 ->arrayNode('post')
                     ->addDefaultsIfNotSet()
                     ->children()

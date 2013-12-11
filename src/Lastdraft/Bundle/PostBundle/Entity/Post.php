@@ -20,11 +20,18 @@ class Post implements PostInterface
     private $id;
 
     /**
-     * Post's owner's unique ID number.
+     * Post's author entity.
+     *
+     * @var AuthorInterface
+     */
+    private $author;
+
+    /**
+     * Post's author's unique ID number.
      *
      * @var integer
      */
-    private $userId;
+    private $authorId;
 
     /**
      * Post's title.
@@ -61,7 +68,6 @@ class Post implements PostInterface
      */
     private $updatedAt;
 
-
     /**
      * {@inheritdoc}
      */
@@ -73,19 +79,17 @@ class Post implements PostInterface
     /**
      * {@inheritdoc}
      */
-    public function setUserId ( $userId )
+    public function getAuthor ()
     {
-        $this->userId = $userId;
-
-        return $this;
+        return $this->author;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getUserId ()
+    public function getAuthorId ()
     {
-        return $this->userId;
+        return $this->authorId;
     }
 
     /**

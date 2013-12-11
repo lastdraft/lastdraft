@@ -2,8 +2,6 @@
 
 namespace Lastdraft\Bundle\PostBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Interface Post
  *
@@ -20,11 +18,18 @@ interface PostInterface
     public function getId ();
 
     /**
-     * Get the ID number of the user who owns this post.
+     * Get the post's author entity.
+     *
+     * @return AuthorInterface
+     */
+    public function getAuthor ();
+
+    /**
+     * Get the ID number of the author who owns this post.
      *
      * @return integer
      */
-    public function getUserId ();
+    public function getAuthorId ();
 
     /**
      * Set the title for this post.

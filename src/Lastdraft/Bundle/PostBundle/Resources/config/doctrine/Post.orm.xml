@@ -9,11 +9,15 @@
             <generator strategy="AUTO" />
         </id>
 
-        <field name="userId" type="integer" column="user_id" />
+        <field name="authorId" type="integer" column="author_id" />
         <field name="title" type="string" column="title" length="255" />
         <field name="body" type="text" column="body" />
         <field name="publishOn" type="datetime" column="publish_on" />
         <field name="createdAt" type="datetime" column="created_at" />
         <field name="updatedAt" type="datetime" column="updated_at" />
+
+        <many-to-one field="author" target-entity="Lastdraft\Bundle\PostBundle\Entity\AuthorInterface">
+            <join-column name="author_id" referenced-column-name="id" />
+        </many-to-one>
     </entity>
 </doctrine-mapping>

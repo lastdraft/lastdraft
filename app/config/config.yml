@@ -77,4 +77,4 @@ swiftmailer:
 fos_user:
     db_driver:     orm
     firewall_name: main
-    user_class:    Lastdraft\Bundle\UserBundle\Entity\User
+    user_class:    %lastdraft_post.author.entity.class%

@@ -1,6 +1,6 @@
 lastdraft_post:
     author:
-        # entity: Acme\Bundle\PostBundle\Entity\Author
+        entity: Acme\Bundle\PostBundle\Entity\Author
 
     post:
         # controller: Acme\Bundle\PostBundle\Controller\PostController

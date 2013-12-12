@@ -2,10 +2,6 @@ lastdraft_post:
     resource: "@LastdraftPostBundle/Resources/config/routing.xml"
     prefix:   /
 
-lastdraft_user:
-    resource: "@LastdraftUserBundle/Resources/config/routing.xml"
-    prefix:   /
-
 # FOS User Bundle Routes
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

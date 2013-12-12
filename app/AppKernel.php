@@ -22,7 +22,6 @@ class AppKernel extends Kernel
 
             // Lastdraft Bundles
             new Lastdraft\Bundle\PostBundle\LastdraftPostBundle(),
-            new Lastdraft\Bundle\UserBundle\LastdraftUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

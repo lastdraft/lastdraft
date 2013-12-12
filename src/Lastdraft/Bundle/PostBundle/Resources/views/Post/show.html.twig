@@ -5,5 +5,12 @@
 {% block body %}
     <h1>Welcome to the Post:show page</h1>
 
-    <strong>Post Title:</strong> {{ post.title }}
+    <ul>
+        <li>
+            <strong>Post Title:</strong> {{ post.title }}
+        </li>
+        <li>
+            <strong>Author:</strong> {{ post.author.email }}
+        </li>
+    </ul>
 {% endblock %}

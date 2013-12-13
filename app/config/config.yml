@@ -60,8 +60,10 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
-        # resolve_target_entities:
-        #     Lastdraft\Bundle\PostBundle\Entity\AuthorInterface: Lastdraft\Bundle\PostBundle\Entity\Author
+        resolve_target_entities:
+             Lastdraft\Bundle\PostBundle\Entity\AuthorInterface: Lastdraft\Bundle\PostBundle\Entity\Author
+             # Lastdraft\Bundle\PostBundle\Entity\AuthorInterface: %lastdraft_author.entity.class%
+             # Lastdraft\Bundle\PostBundle\Entity\PostInterface: lastdraft_post.post.entity
 
 # Swiftmailer Configuration
 swiftmailer:

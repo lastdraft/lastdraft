@@ -2,8 +2,6 @@
 
 namespace Lastdraft\Bundle\PostBundle;
 
-use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
-
 use Lastdraft\Bundle\PostBundle\DependencyInjection\Compiler\ResolveDoctrineTargetEntitiesPass;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle,
@@ -17,23 +15,13 @@ use Symfony\Component\HttpKernel\Bundle\Bundle,
 class LastdraftPostBundle extends Bundle
 {
 
-    /**
-     * Return array of currently supported drivers.
-     *
-     * @return array
-     */
-    /*
-    public static function getSupportedDrivers ()
-    {
-        return array('doctrine/orm');
-    }
-    */
 
     /**
      * {@inheritdoc}
      */
     public function build ( ContainerBuilder $container )
     {
+        /*
         parent::build($container);
 
         $interfaces = array(
@@ -43,7 +31,6 @@ class LastdraftPostBundle extends Bundle
 
         $container->addCompilerPass(new ResolveDoctrineTargetEntitiesPass('lastdraft_post', $interfaces));
 
-        /*
         $mappings = array(
             realpath(__DIR__ . '/Resources/config/doctrine') => 'Lastdraft\Bundle\PostBundle\Entity',
         );

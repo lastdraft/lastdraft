@@ -6,14 +6,14 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="lastdraft_post.author.entity.class" />
-        <parameter key="lastdraft_post.post.controller.class" />
-        <parameter key="lastdraft_post.post.entity.class" />
+        <parameter key="lastdraft_author.entity.class" />
+        <!--<parameter key="lastdraft_post.post.controller.class" />-->
+        <!--<parameter key="lastdraft_post.post.entity.class" />-->
     </parameters>
 
     <services>
-        <service id="lastdraft_post.author.entity" class="%lastdraft_post.author.entity%" />
-        <service id="lastdraft_post.post.controller" class="%lastdraft_post.post.controller%" />
-        <service id="lastdraft_post.post.entity" class="%lastdraft_post.post.entity%" />
+        <service id="lastdraft_author.entity" class="%lastdraft_author.entity.class%" />
+        <!--<service id="lastdraft_post.post.controller" class="%lastdraft_post.post.controller%" />-->
+        <!--<service id="lastdraft_post.post.entity" class="%lastdraft_post.post.entity%" />-->
     </services>
 </container>

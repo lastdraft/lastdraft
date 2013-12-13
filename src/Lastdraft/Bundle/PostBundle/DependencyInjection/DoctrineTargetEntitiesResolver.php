@@ -35,21 +35,12 @@ class DoctrineTargetEntitiesResolver
                 continue;
             }
 
-            $evm  = new \Doctrine\Common\EventManager;
-            $rtel = new ResolveTargetEntityListener;
-            $rtel->addResolveTargetEntity($interface, $container->getParameter($parameter), array());
-
-            // Add the ResolveTargetEntityListener
-            $evm->addEventListener(\Doctrine\ORM\Events::loadClassMetadata, $rtel);
-
-            // $em = \Doctrine\ORM\EntityManager::create($connectionOptions, $config, $evm);
-        }
-
-        if ( ! $resolveTargetEntityListener->hasTag('doctrine.event_listener') ) {
-            $resolveTargetEntityListener->addTag('doctrine.event_listener', array(
-                'event' => 'loadClassMetadata'
+            $resolveTargetEntityListener->addMethodCall('addResolveTargetEntity', array(
+                $interface, $container->getParameter($parameter), array()
             ));
         }
+
+        $resolveTargetEntityListener->addTag('doctrine.event_listener', array('event' => 'loadClassMetadata'));
     }
 
 }

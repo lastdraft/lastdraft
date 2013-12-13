@@ -22,10 +22,12 @@ class LastdraftPostBundle extends Bundle
      *
      * @return array
      */
+    /*
     public static function getSupportedDrivers ()
     {
         return array('doctrine/orm');
     }
+    */
 
     /**
      * {@inheritdoc}

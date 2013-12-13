@@ -30,7 +30,7 @@ class PostController extends Controller
     /**
      * Show an individual post.
      *
-     * @param \Lastdraft\Bundle\PostBundle\Entity\Post $post
+     * @param Post $post The post to be shown.
      * @return array
      * @Template
      */

@@ -2,7 +2,7 @@
 
 namespace Lastdraft\Bundle\PostBundle\DependencyInjection\Compiler;
 
-use Lastdraft\Bundle\PostBundle\DependencyInjection\DoctrineTargetEntitiesResolver;
+// use Lastdraft\Bundle\PostBundle\DependencyInjection\DoctrineTargetEntitiesResolver;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface,
     Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -47,8 +47,33 @@ class ResolveDoctrineTargetEntitiesPass implements CompilerPassInterface
      */
     public function process ( ContainerBuilder $container )
     {
-        $resolver = new DoctrineTargetEntitiesResolver();
-        $resolver->resolve($container, $this->interfaces);
+        if ( ! $container->hasDefinition('doctrine.orm.listeners.resolve_target_entity') ) {
+            throw new \RuntimeException('Unable to locate Doctrine target entity resolver.');
+        }
+
+        $resolveTargetEntityListener = $container->findDefinition('doctrine.orm.listeners.resolve_target_entity');
+
+        foreach ( $this->interfaces as $interface => $parameter ) {
+            if ( ! $container->hasParameter($parameter) ) {
+                continue;
+            }
+
+            /*
+            print_r(array(
+                'interface: ' => $interface,
+                'param:     ' => $parameter,
+                'cParam:    ' => $container->getParameter($parameter),
+            ));
+            */
+
+            $resolveTargetEntityListener->addMethodCall('addResolveTargetEntity', array(
+                $interface, $container->getParameter($parameter), array()
+            ));
+        }
+
+        // var_dump($resolveTargetEntityListener->getMethodCalls());
+
+        $resolveTargetEntityListener->addTag('doctrine.event_listener', array('event' => 'loadClassMetadata'));
     }
 
 }

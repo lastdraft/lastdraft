@@ -2,8 +2,6 @@
 
 namespace Lastdraft\Bundle\PostBundle\DependencyInjection\Compiler;
 
-// use Lastdraft\Bundle\PostBundle\DependencyInjection\DoctrineTargetEntitiesResolver;
-
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface,
     Symfony\Component\DependencyInjection\ContainerBuilder;
 
@@ -24,21 +22,12 @@ class ResolveDoctrineTargetEntitiesPass implements CompilerPassInterface
     private $interfaces;
 
     /**
-     * The bundle's prefix.
+     * Define the bundle's interfaces.
      *
-     * @var string
-     */
-    private $bundlePrefix;
-
-    /**
-     * Define the bundle's prefixes and interfaces.
-     *
-     * @param string $bundlePrefix The bundle's prefix.
      * @param array $interfaces    An array of interfaces used.
      */
-    public function __construct ( $bundlePrefix, array $interfaces )
+    public function __construct ( array $interfaces )
     {
-        $this->bundlePrefix = $bundlePrefix;
         $this->interfaces   = $interfaces;
     }
 
@@ -58,20 +47,10 @@ class ResolveDoctrineTargetEntitiesPass implements CompilerPassInterface
                 continue;
             }
 
-            /*
-            print_r(array(
-                'interface: ' => $interface,
-                'param:     ' => $parameter,
-                'cParam:    ' => $container->getParameter($parameter),
-            ));
-            */
-
             $resolveTargetEntityListener->addMethodCall('addResolveTargetEntity', array(
                 $interface, $container->getParameter($parameter), array()
             ));
         }
-
-        // var_dump($resolveTargetEntityListener->getMethodCalls());
 
         $resolveTargetEntityListener->addTag('doctrine.event_listener', array('event' => 'loadClassMetadata'));
     }

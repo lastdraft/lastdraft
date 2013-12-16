@@ -1,7 +1,8 @@
 lastdraft_post:
     # author:
-    #     entity: Acme\Bundle\PostBundle\Entity\Author
+    #     entity:     Acme\Bundle\PostBundle\Entity\Author
+    #     repository: Acme\Bundle\PostBundle\Repository\AuthorRepository
 
     # post:
-    #     controller: Acme\Bundle\PostBundle\Controller\PostController
-    #     entity: Acme\Bundle\PostBundle\Entity\Post
+    #     entity:     Acme\Bundle\PostBundle\Entity\Post
+    #     repository: Acme\Bundle\PostBundle\Repository\PostRepository

@@ -23,12 +23,11 @@
     </entity>
     -->
 
-    <mapped-superclass name="Lastdraft\Bundle\PostBundle\Entity\Post" table="posts">
+    <mapped-superclass name="Lastdraft\Bundle\PostBundle\Entity\Post" table="posts" repository-class="Lastdraft\Bundle\PostBundle\Repository\PostRepository">
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>
 
-        <field name="authorId" type="integer" column="author_id" />
         <field name="title" type="string" column="title" length="255" />
         <field name="body" type="text" column="body" />
         <field name="publishOn" type="datetime" column="publish_on" />

@@ -27,10 +27,13 @@ class LastdraftPostExtension extends Extension
         $loader->load('services.xml');
 
         // set container parameters based on configuration
-        $container->setParameter('lastdraft_author.entity.class', $config['author']['entity']);
+        $container->setParameter('lastdraft.entity.author.class', $config['author']['entity']);
+        $container->setParameter('lastdraft.repository.author.class', $config['author']['repository']);
 
-        // $container->setParameter('lastdraft_post.post.controller', $config['post']['controller']);
-        // $container->setParameter('lastdraft_post.post.entity', $config['post']['entity']);
+        $container->setParameter('lastdraft.entity.post.class', $config['post']['entity']);
+        $container->setParameter('lastdraft.repository.post.class', $config['post']['repository']);
+
+        $container->setParameter('lastdraft.config.classes', $config);
     }
 
 }

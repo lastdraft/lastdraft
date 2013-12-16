@@ -7,6 +7,7 @@ use Lastdraft\Bundle\PostBundle\Entity\Post;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 
 /**
  * Class PostController
@@ -30,12 +31,14 @@ class PostController extends Controller
     /**
      * Show an individual post.
      *
-     * @param Post $post The post to be shown.
+     * @param integer $id The ID of the post to be shown.
      * @return array
      * @Template
      */
-    public function showAction ( Post $post )
+    public function showAction ( $id )
     {
+        $post = $this->get('lastdraft.repository.post')->find($id);
+
         return array(
             'post' => $post,
         );

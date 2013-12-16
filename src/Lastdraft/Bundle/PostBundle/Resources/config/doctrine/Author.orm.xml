@@ -17,7 +17,7 @@
     </entity>
     -->
 
-    <mapped-superclass name="Lastdraft\Bundle\PostBundle\Entity\Author" table="authors">
+    <mapped-superclass name="Lastdraft\Bundle\PostBundle\Entity\Author" table="authors" repository-class="Lastdraft\Bundle\PostBundle\Repository\AuthorRepository">
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>

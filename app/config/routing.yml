@@ -1,5 +1,5 @@
 lastdraft_post:
-    resource: "@LastdraftPostBundle/Resources/config/routing.xml"
+    resource: "@LastdraftPostBundle/Resources/config/routing/post.xml"
     prefix:   /
 
 # FOS User Bundle Routes

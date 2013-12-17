@@ -5,4 +5,4 @@ lastdraft_post:
 
     # post:
     #     entity:     Acme\Bundle\PostBundle\Entity\Post
-    #     repository: Acme\Bundle\PostBundle\Repository\PostRepository
+    #     repository: Acme\Bundle\PostBundle\Repository\AuthorRepository

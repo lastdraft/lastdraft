@@ -6,7 +6,7 @@
 
     <!-- deprecate this route in the future -->
     <route id="lastdraft_post_homepage" pattern="/hello/{name}">
-        <default key="_controller">LastdraftPostBundle:Default:index</default>
+        <default key="_controller">LastdraftPostBundle:Post:index</default>
     </route>
 
     <route id="index" pattern="/index">

@@ -2,8 +2,8 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     symfony
-    database_user:     root
+    database_name:     lastdraft
+    database_user:     lastdraft
     database_password: ~
 
     mailer_transport:  smtp
@@ -12,4 +12,4 @@ parameters:
     mailer_password:   ~
 
     locale:            en
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    secret:            8065e46d87fd119b380ad180f2882f51fbfd7b90

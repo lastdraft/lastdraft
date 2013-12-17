@@ -2,12 +2,9 @@
 
 namespace Lastdraft\Bundle\PostBundle\Controller;
 
-use Lastdraft\Bundle\PostBundle\Entity\Post;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 
 /**
  * Class PostController
@@ -37,6 +34,7 @@ class PostController extends Controller
      */
     public function showAction ( $id )
     {
+        /* @todo Can this lookup be handled by a custom ParamConverter? */
         $post = $this->get('lastdraft.repository.post')->find($id);
 
         return array(

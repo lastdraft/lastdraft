@@ -7,6 +7,7 @@
     <mapped-superclass name="Lastdraft\Bundle\PostBundle\Entity\AbstractPost" repository-class="Lastdraft\Bundle\PostBundle\Repository\PostRepository">
         <field name="authorId" type="integer" column="author_id" />
         <field name="title" type="string" column="title" length="255" />
+        <field name="slug" type="string" column="slug" length="255" />
         <field name="body" type="text" column="body" />
         <field name="publishOn" type="datetime" column="publish_on" />
         <field name="createdAt" type="datetime" column="created_at" />

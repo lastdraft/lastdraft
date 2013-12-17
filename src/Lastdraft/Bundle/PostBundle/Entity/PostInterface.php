@@ -18,6 +18,14 @@ interface PostInterface
     public function getId ();
 
     /**
+     * Set the post's author entity.
+     *
+     * @param AuthorInterface $author
+     * @return PostInterface
+     */
+    public function setAuthor ( AuthorInterface $author );
+
+    /**
      * Get the post's author entity.
      *
      * @return AuthorInterface
@@ -45,6 +53,21 @@ interface PostInterface
      * @return string
      */
     public function getTitle ();
+
+    /**
+     * Set the slug for this post.
+     *
+     * @param string $slug The slug to be set.
+     * @return PostInterface
+     */
+    public function setSlug ( $slug );
+
+    /**
+     * Get the slug for this post
+     *
+     * @return string
+     */
+    public function getSlug ();
 
     /**
      * Set the body for this post.

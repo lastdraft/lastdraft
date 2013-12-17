@@ -39,6 +39,13 @@ abstract class AbstractPost implements PostInterface
     protected $title;
 
     /**
+     * Post's slug.
+     *
+     * @var string
+     */
+    protected $slug;
+
+    /**
      * Post's body content.
      *
      * @var string
@@ -77,6 +84,16 @@ abstract class AbstractPost implements PostInterface
     /**
      * {@inheritdoc}
      */
+    public function setAuthor ( AuthorInterface $author )
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getAuthor ()
     {
         return $this->author;
@@ -106,6 +123,24 @@ abstract class AbstractPost implements PostInterface
     public function getTitle ()
     {
         return $this->title;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setSlug ( $slug )
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSlug ()
+    {
+        return $this->slug;
     }
 
     /**

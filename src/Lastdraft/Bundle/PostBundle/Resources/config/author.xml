@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<container
+    xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="lastdraft.entity.author.class">Lastdraft\Bundle\PostBundle\Entity\Author</parameter>
+        <parameter key="lastdraft.repository.author.class">Lastdraft\Bundle\PostBundle\Repository\AuthorRepository</parameter>
+    </parameters>
+
+    <services>
+        <service id="lastdraft.entity.author" class="%lastdraft.entity.author.class%" />
+        <service id="lastdraft.repository.author" class="%lastdraft.repository.author.class%" factory-service="doctrine" factory-method="getRepository">
+            <argument>%lastdraft.entity.author.class%</argument>
+        </service>
+    </services>
+</container>

@@ -23,6 +23,7 @@ class LastdraftPostBundle extends Bundle
      */
     public function build ( ContainerBuilder $container )
     {
+        /*
         parent::build($container);
 
         $interfaces = array(
@@ -39,6 +40,7 @@ class LastdraftPostBundle extends Bundle
         $container->addCompilerPass(DoctrineOrmMappingsPass::createXmlMappingDriver(
             $mappings, array('doctrine.orm.entity_manager'), 'lastdraft_post.driver.doctrine/orm'
         ));
+        */
     }
 
 }

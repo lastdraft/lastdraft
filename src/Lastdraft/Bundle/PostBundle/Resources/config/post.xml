@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<container
+    xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="lastdraft.entity.post.class">Lastdraft\Bundle\PostBundle\Entity\Post</parameter>
+        <parameter key="lastdraft.repository.post.class">Lastdraft\Bundle\PostBundle\Repository\PostRepository</parameter>
+    </parameters>
+
+    <services>
+        <service id="lastdraft.entity.post" class="%lastdraft.entity.post.class%" />
+        <service id="lastdraft.repository.post" class="%lastdraft.repository.post.class%" factory-service="doctrine" factory-method="getRepository">
+            <argument>%lastdraft.entity.post.class%</argument>
+        </service>
+    </services>
+</container>

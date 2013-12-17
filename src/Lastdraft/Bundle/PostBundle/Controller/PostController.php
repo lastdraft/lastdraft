@@ -28,13 +28,14 @@ class PostController extends Controller
     /**
      * Show an individual post.
      *
+     * @todo Can this lookup be handled by a custom ParamConverter?
+     *
      * @param integer $id The ID of the post to be shown.
      * @return array
      * @Template
      */
     public function showAction ( $id )
     {
-        /* @todo Can this lookup be handled by a custom ParamConverter? */
         $post = $this->get('lastdraft.repository.post')->find($id);
 
         return array(

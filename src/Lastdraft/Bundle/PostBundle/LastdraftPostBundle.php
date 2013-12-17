@@ -2,9 +2,7 @@
 
 namespace Lastdraft\Bundle\PostBundle;
 
-use Lastdraft\Bundle\PostBundle\DependencyInjection\Compiler\DoctrineMapperPass;
-use Symfony\Component\HttpKernel\Bundle\Bundle,
-    Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
  * Class LastdraftPostBundle
@@ -13,16 +11,4 @@ use Symfony\Component\HttpKernel\Bundle\Bundle,
  */
 class LastdraftPostBundle extends Bundle
 {
-
-
-    /**
-     * {@inheritdoc}
-     */
-    public function build ( ContainerBuilder $container )
-    {
-        parent::build($container);
-
-        $container->addCompilerPass(new DoctrineMapperPass());
-    }
-
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Lastdraft\Bundle\PostBundle\Mapper\ORM;
+namespace Lastdraft\Bundle\DoctrineMapperBundle\Collector\ORM;
 
 use Doctrine\Bundle\DoctrineBundle\Registry,
     Doctrine\Common\EventSubscriber,
@@ -10,8 +10,7 @@ use Doctrine\Bundle\DoctrineBundle\Registry,
 /**
  * Class Mapper
  *
- * @todo Migrate to a bundle (CoreBundle, or DoctrineBundle, etc.)
- * @package Lastdraft\Bundle\PostBundle\Mapper\ORM
+ * @package Lastdraft\Bundle\DoctrineMapperBundle\Collector\ORM
  */
 class Mapper implements EventSubscriber
 {

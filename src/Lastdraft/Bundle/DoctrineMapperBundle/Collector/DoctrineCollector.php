@@ -1,12 +1,11 @@
 <?php
 
-namespace Lastdraft\Bundle\PostBundle\Mapper;
+namespace Lastdraft\Bundle\DoctrineMapperBundle\Collector;
 
 /**
  * Class DoctrineCollector
  *
- * @todo Migrate to a bundle (CoreBundle, or DoctrineBundle, etc.)
- * @package Lastdraft\Bundle\PostBundle\Mapper
+ * @package Lastdraft\Bundle\DoctrineMapperBundle\Collector
  */
 class DoctrineCollector
 {

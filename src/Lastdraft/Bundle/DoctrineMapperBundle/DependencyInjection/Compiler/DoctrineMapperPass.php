@@ -1,16 +1,16 @@
 <?php
 
-namespace Lastdraft\Bundle\PostBundle\DependencyInjection\Compiler;
+namespace Lastdraft\Bundle\DoctrineMapperBundle\DependencyInjection\Compiler;
 
-use Lastdraft\Bundle\PostBundle\Mapper\DoctrineCollector;
-use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Lastdraft\Bundle\DoctrineMapperBundle\Collector\DoctrineCollector;
+
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface,
+    Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * Class DoctrineMapperPass
  *
- * @todo Migrate to a bundle (CoreBundle, or DoctrineBundle, etc.)
- * @package Lastdraft\Bundle\PostBundle\DependencyInjection\Compiler
+ * @package Lastdraft\Bundle\DoctrineMapperBundle\DependencyInjection\Compiler
  */
 class DoctrineMapperPass implements CompilerPassInterface
 {

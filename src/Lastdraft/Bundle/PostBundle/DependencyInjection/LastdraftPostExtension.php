@@ -2,7 +2,7 @@
 
 namespace Lastdraft\Bundle\PostBundle\DependencyInjection;
 
-use Lastdraft\Bundle\PostBundle\Mapper\DoctrineCollector;
+use Lastdraft\Bundle\DoctrineMapperBundle\Collector\DoctrineCollector;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder,
     Symfony\Component\Config\FileLocator,
@@ -27,7 +27,6 @@ class LastdraftPostExtension extends Extension
 
         $loader = new Loader\XmlFileLoader( $container, new FileLocator( __DIR__ . '/../Resources/config' ) );
         $loader->load('author.xml');
-        $loader->load('mapper.xml');
         $loader->load('post.xml');
 
         $this->registerDoctrineMapping($config);

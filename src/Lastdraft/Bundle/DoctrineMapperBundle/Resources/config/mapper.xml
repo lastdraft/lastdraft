@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="lastdraft.doctrine.mapper" class="Lastdraft\Bundle\PostBundle\Mapper\ORM\Mapper">
+        <service id="lastdraft.doctrine.mapper" class="Lastdraft\Bundle\DoctrineMapperBundle\Collector\ORM\Mapper">
             <tag name="doctrine.event_subscriber" />
             <argument type="service" id="doctrine" />
         </service>

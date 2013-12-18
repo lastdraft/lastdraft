@@ -1,6 +1,6 @@
 <?php
 
-namespace Lastdraft\Bundle\DoctrineMapperBundle\DependencyInjection;
+namespace Lastdraft\Bundle\DoctrineBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

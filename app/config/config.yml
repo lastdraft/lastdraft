@@ -57,8 +57,6 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
-        # resolve_target_entities:
-        #      Lastdraft\Bundle\PostBundle\Entity\AuthorInterface: Lastdraft\Bundle\PostBundle\Entity\Author
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -72,6 +70,4 @@ swiftmailer:
 fos_user:
     db_driver:     orm
     firewall_name: main
-    user_class:    Lastdraft\Bundle\PostBundle\Entity\Author
-
-
+    user_class:    Lastdraft\Bundle\PostBundle\Model\Author

@@ -22,8 +22,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
 
             // Lastdraft Bundles
+            new Lastdraft\Bundle\DoctrineBundle\LastdraftDoctrineBundle(),
             new Lastdraft\Bundle\PostBundle\LastdraftPostBundle(),
-            new Lastdraft\Bundle\DoctrineMapperBundle\LastdraftDoctrineMapperBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -37,7 +37,7 @@ class AppKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
+        $loader->load(__DIR__ . '/config/config_' . $this->getEnvironment() . '.yml');
     }
 
 }

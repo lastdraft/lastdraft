@@ -1,6 +1,6 @@
 <?php
 
-namespace Lastdraft\Bundle\DoctrineMapperBundle\DependencyInjection;
+namespace Lastdraft\Bundle\DoctrineBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder,
     Symfony\Component\Config\FileLocator,
@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder,
 /**
  * This is the class that loads and manages your bundle configuration
  */
-class LastdraftDoctrineMapperExtension extends Extension
+class LastdraftDoctrineExtension extends Extension
 {
 
     /**
@@ -19,7 +19,7 @@ class LastdraftDoctrineMapperExtension extends Extension
     public function load ( array $configs, ContainerBuilder $container )
     {
         $loader = new Loader\XmlFileLoader( $container, new FileLocator( __DIR__ . '/../Resources/config' ) );
-        $loader->load('mapper.xml');
+        $loader->load('metadataSubscriber.xml');
     }
 
 }

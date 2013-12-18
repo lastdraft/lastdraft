@@ -1,13 +1,13 @@
 <?php
 
-namespace Lastdraft\Bundle\PostBundle\Entity;
+namespace Lastdraft\Bundle\PostBundle\Model;
 
 /**
  * Class Post
  *
- * @package Lastdraft\Bundle\PostBundle\Entity
+ * @package Lastdraft\Bundle\PostBundle\Model
  */
-abstract class AbstractPost implements PostInterface
+class Post implements PostInterface
 {
 
     /**
@@ -76,6 +76,14 @@ abstract class AbstractPost implements PostInterface
     /**
      * {@inheritdoc}
      */
+    public function __toString ()
+    {
+        return $this->getTitle();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getId ()
     {
         return $this->id;
@@ -128,20 +136,24 @@ abstract class AbstractPost implements PostInterface
     /**
      * {@inheritdoc}
      */
+    /*
     public function setSlug ( $slug )
     {
         $this->slug = $slug;
 
         return $this;
     }
+    */
 
     /**
      * {@inheritdoc}
      */
+    /*
     public function getSlug ()
     {
         return $this->slug;
     }
+    */
 
     /**
      * {@inheritdoc}
@@ -182,11 +194,9 @@ abstract class AbstractPost implements PostInterface
     /**
      * {@inheritdoc}
      */
-    public function setCreatedAt ( $createdAt )
+    public function setCreatedAt ()
     {
-        $this->createdAt = $createdAt;
-
-        return $this;
+        $this->createdAt = new \DateTime();
     }
 
     /**
@@ -200,11 +210,9 @@ abstract class AbstractPost implements PostInterface
     /**
      * {@inheritdoc}
      */
-    public function setUpdatedAt ( $updatedAt )
+    public function setUpdatedAt ()
     {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
+        $this->updatedAt = new \DateTime();
     }
 
     /**

@@ -1,14 +1,21 @@
 <?php
 
-namespace Lastdraft\Bundle\PostBundle\Entity;
+namespace Lastdraft\Bundle\PostBundle\Model;
 
 /**
  * Interface Author
  *
- * @package Lastdraft\Bundle\PostBundle\Entity
+ * @package Lastdraft\Bundle\PostBundle\Model
  */
 interface AuthorInterface
 {
+
+    /**
+     * Represent the author as a string.
+     *
+     * @return string
+     */
+    public function __toString ();
 
     /**
      * Get the author's first name.
@@ -24,6 +31,13 @@ interface AuthorInterface
      * @return AuthorInterface
      */
     public function setFirstName ( $firstName = null );
+
+    /**
+     * Get the author's full name (first and surnames).
+     *
+     * @return string
+     */
+    public function getFullName ();
 
     /**
      * Return a collection of post entities belonging to this author.

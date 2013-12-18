@@ -1,15 +1,15 @@
 <?php
 
-namespace Lastdraft\Bundle\PostBundle\Entity;
+namespace Lastdraft\Bundle\PostBundle\Model;
 
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * Class Author
  *
- * @package Lastdraft\Bundle\PostBundle\Entity
+ * @package Lastdraft\Bundle\PostBundle\Model
  */
-abstract class AbstractAuthor extends BaseUser implements AuthorInterface
+class Author extends BaseUser implements AuthorInterface
 {
 
     /**
@@ -41,6 +41,14 @@ abstract class AbstractAuthor extends BaseUser implements AuthorInterface
     protected $posts;
 
     /**
+     * {@inheritdoc}
+     */
+    public function __toString ()
+    {
+        return $this->getEmail();
+    }
+
+    /**
      * Get the authors's unique ID number.
      *
      * @return integer
@@ -66,6 +74,14 @@ abstract class AbstractAuthor extends BaseUser implements AuthorInterface
         $this->firstName = $firstName;
 
         return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getFullName ()
+    {
+        return sprintf('%s %s', $this->getFirstName(), $this->getSurname());
     }
 
     /**

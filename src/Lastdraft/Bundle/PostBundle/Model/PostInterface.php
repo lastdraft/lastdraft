@@ -1,14 +1,21 @@
 <?php
 
-namespace Lastdraft\Bundle\PostBundle\Entity;
+namespace Lastdraft\Bundle\PostBundle\Model;
 
 /**
  * Interface Post
  *
- * @package Lastdraft\Bundle\PostBundle\Entity
+ * @package Lastdraft\Bundle\PostBundle\Model
  */
 interface PostInterface
 {
+
+    /**
+     * Represent the post as a string.
+     *
+     * @return string
+     */
+    public function __toString ();
 
     /**
      * Get the unique ID number for this post.
@@ -60,14 +67,14 @@ interface PostInterface
      * @param string $slug The slug to be set.
      * @return PostInterface
      */
-    public function setSlug ( $slug );
+    // public function setSlug ( $slug );
 
     /**
      * Get the slug for this post
      *
      * @return string
      */
-    public function getSlug ();
+    // public function getSlug ();
 
     /**
      * Set the body for this post.
@@ -102,10 +109,9 @@ interface PostInterface
     /**
      * Set the date/time this post was created.
      *
-     * @param \DateTime $createdAt The date/time this post was created on.
-     * @return PostInterface
+     * @return void
      */
-    public function setCreatedAt ( $createdAt );
+    public function setCreatedAt ();
 
     /**
      * Get the date/time this post was created.
@@ -117,10 +123,9 @@ interface PostInterface
     /**
      * Set the date/time this post was last updated.
      *
-     * @param \DateTime $updatedAt The date/time this post was last updated.
-     * @return PostInterface
+     * @return void
      */
-    public function setUpdatedAt ( $updatedAt );
+    public function setUpdatedAt ();
 
     /**
      * Get the date/time this post was last updated.

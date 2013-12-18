@@ -1,6 +1,6 @@
 <?php
 
-namespace Lastdraft\Bundle\DoctrineMapperBundle\Tests\Controller;
+namespace Lastdraft\Bundle\DoctrineBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

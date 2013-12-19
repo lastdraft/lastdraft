@@ -4,6 +4,8 @@ namespace Lastdraft\Bundle\DoctrineBundle\EventListener;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
+use Doctrine\ORM\Mapping\ClassMetadata;
+use Doctrine\ORM\Mapping\ClassMetadataInfo;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class LoadMetadataSubscriber implements EventSubscriber
@@ -35,14 +37,6 @@ class LoadMetadataSubscriber implements EventSubscriber
     }
 
     /**
-     * @param ContainerBuilder $container
-     */
-    public function build ( ContainerBuilder $container )
-    {
-
-    }
-
-    /**
      * @param LoadClassMetadataEventArgs $eventArgs
      */
     public function loadClassMetadata ( LoadClassMetadataEventArgs $eventArgs )
@@ -50,7 +44,35 @@ class LoadMetadataSubscriber implements EventSubscriber
         $metadata = $eventArgs->getClassMetadata();
         $configuration = $eventArgs->getEntityManager()->getConfiguration();
 
-        var_dump('wee');
+        foreach ( $this->classes as $class ) {
+            if ( array_key_exists('model', $class) && $class['model'] === $metadata->getName() ) {
+                $metadata->isMappedSuperclass = false;
+            }
+        }
+
+        if ( ! $metadata->isMappedSuperclass ) {
+            foreach ( class_parents($metadata->getName()) as $parent ) {
+                $parentMetadata = new ClassMetadata($parent, $configuration->getNamingStrategy());
+
+                if ( in_array($parent, $configuration->getMetadataDriverImpl()->getAllClassNames()) ) {
+                    $configuration->getMetadataDriverImpl()->loadMetadataForClass($parent, $parentMetadata);
+
+                    if ( $parentMetadata->isMappedSuperclass ) {
+                        foreach ( $parentMetadata->getAssociationMappings() as $key => $value ) {
+                            if ( ClassMetadataInfo::ONE_TO_MANY === $value['type'] || ClassMetadataInfo::ONE_TO_ONE === $value['type'] ) {
+                                $metadata->associationMappings[$key] = $value;
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            foreach ( $metadata->getAssociationMappings() as $key => $value ) {
+                if ( $value['type'] === ClassMetadataInfo::ONE_TO_MANY || $value['type'] === ClassMetadataInfo::ONE_TO_ONE ) {
+                    unset($metadata->associationMappings[$key]);
+                }
+            }
+        }
     }
 
 }

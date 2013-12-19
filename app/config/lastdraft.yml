@@ -1,8 +1,8 @@
 lastdraft_post:
     # author:
-    #     entity:     Acme\Bundle\PostBundle\Entity\Author
+    #     model:      Acme\Bundle\PostBundle\Entity\Author
     #     repository: Acme\Bundle\PostBundle\Repository\AuthorRepository
 
     # post:
-    #     entity:     Acme\Bundle\PostBundle\Entity\Post
+    #     model:      Acme\Bundle\PostBundle\Entity\Post
     #     repository: Acme\Bundle\PostBundle\Repository\AuthorRepository

@@ -4,6 +4,8 @@ namespace Lastdraft\Bundle\PostBundle;
 
 use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
 
+use Lastdraft\Bundle\DoctrineBundle\DependencyInjection\Compiler\ResolveDoctrineTargetEntitiesPass;
+
 use Symfony\Component\DependencyInjection\ContainerBuilder,
     Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -21,11 +23,11 @@ class LastdraftPostBundle extends Bundle
     public function build ( ContainerBuilder $container )
     {
         $interfaces = array(
-            'Lastdraft\Bundle\PostBundle\Model\AddressInterface' => 'Lastdraft\Bundle\PostBundle\Model\Address',
-            'Lastdraft\Bundle\PostBundle\Model\PostInterface'    => 'Lastdraft\Bundle\PostBundle\Model\Post',
+            'Lastdraft\Bundle\PostBundle\Model\AddressInterface' => 'lastdraft.model.author.class',
+            'Lastdraft\Bundle\PostBundle\Model\PostInterface'    => 'lastdraft.model.post.class',
         );
 
-        // $container->addCompilerPass(new ResolveDoctrineTargetEntitiesPass('lastdraft_post', $interfaces));
+        $container->addCompilerPass(new ResolveDoctrineTargetEntitiesPass('lastdraft_post', $interfaces));
 
         $mappings = array(
             realpath(__DIR__ . '/Resources/config/doctrine/model') => 'Lastdraft\Bundle\PostBundle\Model',

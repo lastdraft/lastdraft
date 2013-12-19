@@ -41,10 +41,10 @@ class LastdraftPostExtension extends Extension
     private function registerParameters ( ContainerBuilder $container, array $config )
     {
         // Author
-        $container->setParameter('lastdraft.entity.author.class', $config['author']['entity']);
+        $container->setParameter('lastdraft.model.author.class', $config['author']['model']);
         $container->setParameter('lastdraft.repository.author.class', $config['author']['repository']);
         // Post
-        $container->setParameter('lastdraft.entity.post.class', $config['post']['entity']);
+        $container->setParameter('lastdraft.model.post.class', $config['post']['model']);
         $container->setParameter('lastdraft.repository.post.class', $config['post']['repository']);
         // Configuration Classes
         $container->setParameter('lastdraft.config.classes', $config);

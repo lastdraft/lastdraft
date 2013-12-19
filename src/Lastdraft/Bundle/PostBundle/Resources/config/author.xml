@@ -5,14 +5,14 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="lastdraft.entity.author.class">Lastdraft\Bundle\PostBundle\Model\Author</parameter>
+        <parameter key="lastdraft.model.author.class">Lastdraft\Bundle\PostBundle\Model\Author</parameter>
         <parameter key="lastdraft.repository.author.class">Lastdraft\Bundle\PostBundle\Repository\AuthorRepository</parameter>
     </parameters>
 
     <services>
-        <service id="lastdraft.entity.author" class="%lastdraft.entity.author.class%" />
+        <service id="lastdraft.model.author" class="%lastdraft.model.author.class%" />
         <service id="lastdraft.repository.author" class="%lastdraft.repository.author.class%" factory-service="doctrine" factory-method="getRepository">
-            <argument>%lastdraft.entity.author.class%</argument>
+            <argument>%lastdraft.model.author.class%</argument>
         </service>
     </services>
 </container>

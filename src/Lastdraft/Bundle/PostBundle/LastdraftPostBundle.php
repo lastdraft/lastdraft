@@ -27,7 +27,7 @@ class LastdraftPostBundle extends Bundle
             'Lastdraft\Bundle\PostBundle\Model\PostInterface'    => 'lastdraft.model.post.class',
         );
 
-        $container->addCompilerPass(new ResolveDoctrineTargetEntitiesPass('lastdraft_post', $interfaces));
+        $container->addCompilerPass(new ResolveDoctrineTargetEntitiesPass($interfaces));
 
         $mappings = array(
             realpath(__DIR__ . '/Resources/config/doctrine/model') => 'Lastdraft\Bundle\PostBundle\Model',

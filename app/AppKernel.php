@@ -9,6 +9,11 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = array(
+            // Lastdraft Bundles
+            new Lastdraft\Bundle\DoctrineBundle\LastdraftDoctrineBundle(),
+            new Lastdraft\Bundle\PostBundle\LastdraftPostBundle(),
+
+            // Core Bundles
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -20,10 +25,6 @@ class AppKernel extends Kernel
 
             // Third-party Bundles
             new FOS\UserBundle\FOSUserBundle(),
-
-            // Lastdraft Bundles
-            new Lastdraft\Bundle\DoctrineBundle\LastdraftDoctrineBundle(),
-            new Lastdraft\Bundle\PostBundle\LastdraftPostBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

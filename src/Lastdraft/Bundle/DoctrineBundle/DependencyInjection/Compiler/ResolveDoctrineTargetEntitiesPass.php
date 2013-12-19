@@ -2,8 +2,8 @@
 
 namespace Lastdraft\Bundle\DoctrineBundle\DependencyInjection\Compiler;
 
-use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface,
+    Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * Class ResolveDoctrineTargetEntitiesPass
@@ -21,19 +21,10 @@ class ResolveDoctrineTargetEntitiesPass implements CompilerPassInterface
     private $interfaces;
 
     /**
-     * The bundle's prefix.
-     *
-     * @var string
-     */
-    private $prefix;
-
-    /**
-     * @param string $prefix The bundle's prefix.
      * @param array $interfaces An array of interfaces to resolve.
      */
-    public function __construct ( $prefix, array $interfaces )
+    public function __construct ( array $interfaces )
     {
-        $this->prefix = $prefix;
         $this->interfaces = $interfaces;
     }
 
@@ -53,13 +44,9 @@ class ResolveDoctrineTargetEntitiesPass implements CompilerPassInterface
                 continue;
             }
 
-            $evm  = new \Doctrine\Common\EventManager;
-
             $definition->addMethodCall('addResolveTargetEntity', array(
                 $interface, $container->getParameter($parameter), array()
             ));
-
-            $evm->addEventListener(\Doctrine\ORM\Events::loadClassMetadata, $definition);
         }
 
         if ( ! $definition->hasTag('doctrine.event_listener')) {

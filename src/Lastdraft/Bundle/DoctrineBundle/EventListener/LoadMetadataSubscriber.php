@@ -2,11 +2,10 @@
 
 namespace Lastdraft\Bundle\DoctrineBundle\EventListener;
 
-use Doctrine\Common\EventSubscriber;
-use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
-use Doctrine\ORM\Mapping\ClassMetadata;
-use Doctrine\ORM\Mapping\ClassMetadataInfo;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Doctrine\Common\EventSubscriber,
+    Doctrine\ORM\Event\LoadClassMetadataEventArgs,
+    Doctrine\ORM\Mapping\ClassMetadata,
+    Doctrine\ORM\Mapping\ClassMetadataInfo;
 
 class LoadMetadataSubscriber implements EventSubscriber
 {

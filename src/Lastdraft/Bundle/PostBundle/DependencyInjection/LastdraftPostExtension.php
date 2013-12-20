@@ -2,8 +2,6 @@
 
 namespace Lastdraft\Bundle\PostBundle\DependencyInjection;
 
-use Lastdraft\Bundle\DoctrineBundle\Collector\DoctrineCollector;
-
 use Symfony\Component\DependencyInjection\ContainerBuilder,
     Symfony\Component\Config\FileLocator,
     Symfony\Component\HttpKernel\DependencyInjection\Extension,

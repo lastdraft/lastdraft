@@ -1,8 +1,8 @@
 lastdraft_post:
     author:
-        model:      Lastdraft\Bundle\PostBundle\Entity\Author
+        model:      Lastdraft\Bundle\PostBundle\Model\Author
         repository: Lastdraft\Bundle\PostBundle\Repository\AuthorRepository
 
     post:
-        model:      Lastdraft\Bundle\PostBundle\Entity\Post
+        model:      Lastdraft\Bundle\PostBundle\Model\Post
         repository: Lastdraft\Bundle\PostBundle\Repository\AuthorRepository

@@ -12,27 +12,4 @@
         <default key="_controller">LastdraftPostBundle:Post:show</default>
     </route>
 
-    <route id="post_new" pattern="/new">
-        <default key="_controller">LastdraftPostBundle:Post:new</default>
-    </route>
-
-    <route id="post_create" pattern="/create">
-        <default key="_controller">LastdraftPostBundle:Post:create</default>
-        <requirement key="_method">post</requirement>
-    </route>
-
-    <route id="post_edit" pattern="/{id}/edit">
-        <default key="_controller">LastdraftPostBundle:Post:edit</default>
-    </route>
-
-    <route id="post_update" pattern="/{id}/update">
-        <default key="_controller">LastdraftPostBundle:Post:update</default>
-        <requirement key="_method">post|put</requirement>
-    </route>
-
-    <route id="post_delete" pattern="/{id}/delete">
-        <default key="_controller">LastdraftPostBundle:Post:delete</default>
-        <requirement key="_method">post|delete</requirement>
-    </route>
-
 </routes>

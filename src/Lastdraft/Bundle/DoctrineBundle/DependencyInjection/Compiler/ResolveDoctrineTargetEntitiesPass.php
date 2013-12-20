@@ -8,6 +8,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface,
 /**
  * Class ResolveDoctrineTargetEntitiesPass
  *
+ * @deprecated See doctrine.orm.resolve_target_entities in app/config/config.yml.
  * @package Lastdraft\Bundle\DoctrineBundle\DependencyInjection\Compiler
  */
 class ResolveDoctrineTargetEntitiesPass implements CompilerPassInterface

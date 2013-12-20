@@ -11,10 +11,4 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class LastdraftDoctrineBundle extends Bundle
 {
-
-    /**
-     * Doctrine ORM
-     */
-    const DRIVER_DOCTRINE_ORM = 'doctrine/orm';
-
 }

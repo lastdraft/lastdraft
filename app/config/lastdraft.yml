@@ -5,4 +5,4 @@ lastdraft_post:
 
     post:
         model:      Lastdraft\Bundle\PostBundle\Model\Post
-        repository: Lastdraft\Bundle\PostBundle\Repository\AuthorRepository
+        repository: Lastdraft\Bundle\PostBundle\Repository\PostRepository

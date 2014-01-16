@@ -12,4 +12,8 @@
         <default key="_controller">LastdraftPostBundle:Post:show</default>
     </route>
 
+    <route id="post_edit" pattern="/{id}/edit">
+        <default key="_controller">LastdraftPostBundle:Post:edit</default>
+    </route>
+
 </routes>

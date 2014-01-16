@@ -4,11 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <mapped-superclass
-            name="Lastdraft\Bundle\PostBundle\Model\Post"
-            repository-class="Lastdraft\Bundle\PostBundle\Repository\PostRepository"
-            table="posts">
-
+    <mapped-superclass name="Lastdraft\Bundle\PostBundle\Model\Post" table="posts">
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>
@@ -29,6 +25,5 @@
             <lifecycle-callback type="prePersist" method="setCreatedAt" />
             <lifecycle-callback type="prePersist" method="setUpdatedAt" />
         </lifecycle-callbacks>
-
     </mapped-superclass>
 </doctrine-mapping>

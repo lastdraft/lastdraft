@@ -26,8 +26,10 @@ class LastdraftPostExtension extends Extension
         $loader = new Loader\XmlFileLoader( $container, new FileLocator( __DIR__ . '/../Resources/config' ) );
         $loader->load('author.xml');
         $loader->load('post.xml');
+        $loader->load('paramConverter/post.xml');
 
         $this->registerParameters($container, $config);
+
     }
 
     /**
@@ -41,9 +43,11 @@ class LastdraftPostExtension extends Extension
         // Author
         $container->setParameter('lastdraft.model.author.class', $config['author']['model']);
         $container->setParameter('lastdraft.repository.author.class', $config['author']['repository']);
+
         // Post
         $container->setParameter('lastdraft.model.post.class', $config['post']['model']);
         $container->setParameter('lastdraft.repository.post.class', $config['post']['repository']);
+
         // Configuration Classes
         $container->setParameter('lastdraft.config.classes', $config);
     }

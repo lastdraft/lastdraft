@@ -74,7 +74,7 @@ class Configuration implements ConfigurationInterface
                             ->cannotBeEmpty()
                             ->example('Lastdraft\\Bundle\\PostBundle\\Repository\\PostRepository')
                             ->info('Post Repository Class')
-                            ->defaultValue('Lastdraft\\Bundle\\PostBundle\\Repository\\PostRepository')
+                            // ->defaultValue('Lastdraft\\Bundle\\PostBundle\\Repository\\PostRepository')
                         ->end()
                     ->end()
                 ->end()

@@ -4,11 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <mapped-superclass
-            name="Lastdraft\Bundle\PostBundle\Model\Author"
-            repository-class="Lastdraft\Bundle\PostBundle\Repository\AuthorRepository"
-            table="authors">
-
+    <mapped-superclass name="Lastdraft\Bundle\PostBundle\Model\Author" table="authors">
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>
@@ -17,6 +13,5 @@
         <field name="surname" type="string" column="surname" length="255" nullable="true" />
 
         <one-to-many field="posts" target-entity="Lastdraft\Bundle\PostBundle\Model\PostInterface" mapped-by="author" />
-
     </mapped-superclass>
 </doctrine-mapping>

@@ -2,6 +2,8 @@
 
 namespace Lastdraft\Bundle\PostBundle\Controller;
 
+use Lastdraft\Bundle\PostBundle\Model\PostInterface;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -28,14 +30,26 @@ class PostController extends Controller
     /**
      * Show an individual post.
      *
-     * @param integer $id The ID of the post to be shown.
+     * @param PostInterface $post The post to be shown.
      * @return array
      * @Template
      */
-    public function showAction ( $id )
+    public function showAction ( PostInterface $post )
     {
-        $post = $this->get('lastdraft.repository.post')->find($id);
+        return array(
+            'post' => $post,
+        );
+    }
 
+    /**
+     * Edit an individual post.
+     *
+     * @param PostInterface $post The post to be edited.
+     * @return array
+     * @Template
+     */
+    public function editAction ( PostInterface $post )
+    {
         return array(
             'post' => $post,
         );

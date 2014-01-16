@@ -9,6 +9,6 @@ use Doctrine\ORM\EntityRepository;
  *
  * @package Lastdraft\Bundle\PostBundle\Repository
  */
-class PostRepository extends EntityRepository
+class PostRepository extends EntityRepository implements PostRepositoryInterface
 {
 }

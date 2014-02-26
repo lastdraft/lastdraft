@@ -1,29 +1,5 @@
-{% extends '::base.html.twig' %}
+{% extends 'LastdraftCoreBundle::base.html.twig' %}
 
-{% block body -%}
-    <h1>Post</h1>
-
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ post.id }}</td>
-            </tr>
-
-            <tr>
-                <th>Body</th>
-                <td>{{ post.body }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('post') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('post_edit', { 'id': post.id }) }}">Edit</a>
-        </li>
-        {# <li>{{ form(delete_form) }}</li> #}
-    </ul>
+{% block lastdraft_content -%}
+    {% include 'LastdraftPostBundle:Post:template/show.html.twig' %}
 {% endblock %}

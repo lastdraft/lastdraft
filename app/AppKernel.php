@@ -10,6 +10,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             // Lastdraft Bundles
+            new Lastdraft\Bundle\CoreBundle\LastdraftCoreBundle(),
             new Lastdraft\Bundle\DoctrineBundle\LastdraftDoctrineBundle(),
             new Lastdraft\Bundle\PostBundle\LastdraftPostBundle(),
 

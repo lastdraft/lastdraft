@@ -29,7 +29,6 @@ class LastdraftPostExtension extends Extension
         $loader->load('paramConverter/post.xml');
 
         $this->registerParameters($container, $config);
-
     }
 
     /**

@@ -1,3 +1,7 @@
+lastdraft_core:
+    resource: "@LastdraftCoreBundle/Resources/config/routing.xml"
+    prefix:   /
+
 lastdraft_post:
     resource: "@LastdraftPostBundle/Resources/config/routing/post.xml"
     prefix:   /
